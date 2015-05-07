@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--- This file contains the definitions Selec MFM383C 3 Phase Energy Meter -->
+<DeviceDefinition name="Selec MFM383C 3 Phase Energy Meter" type="54" type_name="ModBus">
+<Properties> 
+	<Property name="Variables"> 
+		<Variables> 
+			<VariableInfo type="STRUCT" name="Setup" struct_id="1"/> 
+			<VariableInfo type="STRUCT" name="Data" struct_id="2"/> 
+			<VariableInfo type="STRUCT" name="Status" struct_id="3"/> 
+		</Variables> 
+	</Property> 
+	<Property name="Structures"> 
+	   <Structures> 
+			<StructureInfo name="Live Data Values" struct_id="1" data_table="Input Registers"> 
+				<VariableInfo type="FLOAT4" name="Volts 1" data_table="Input Registers" desc="Voltage #1 (L1-N2/4W or L1-L2 3W)" options="1" offset="0"/> 
+				<VariableInfo type="FLOAT4" name="Volts 2" data_table="Input Registers" desc="Voltage #2 (L2-N2/4W or L2-L3 3W)" options="1" offset="2"/> 
+				<VariableInfo type="FLOAT4" name="Volts 3" data_table="Input Registers" desc="Voltage #3 (L3-N2/4W or L3-L1 3W)" options="1" offset="4"/> 
+				<VariableInfo type="INT4" name="Current 1" data_table="Input Registers" desc="Current #1 (Amps)" options="1" offset="6"/> 
+				<VariableInfo type="INT4" name="Current 2" data_table="Input Registers" desc="Current #2 (Amps)" options="1" offset="8"/> 
+				<VariableInfo type="INT4" name="Current 3" data_table="Input Registers" desc="Current #3 (Amps)" options="1" offset="10"/> 
+			</StructureInfo> 
+			<StructureInfo name="Configuration Setup Parameters" struct_id="2" data_table="Holding Registers"> 
+				<VariableInfo type="INT2" name="Demand Time" data_table="Holding Registers desc="Demand Time Minutes, Reset (0 Only)" options="3" offset="0"/> 
+				<VariableInfo type="INT2" name="Demand Period" data_table="Holding Registers desc="Demand Period (Minutes) 8,15,20,30,60" options="3" offset="2"/> 
+				<VariableInfo type="FLOAT4" name="System Voltage" data_table="Holding Registers desc="System Voltage (Volts) 1V - 400kV" options="3" offset="6"/> 
+				<VariableInfo type="INT4" name="System Current" data_table="Holding Registers desc="System Current (Amps) 1-9999" options="3" offset="8"/> 
+			 </StructureInfo> 
+		</Structures> 
+	</Property> 
+</Properties> 
